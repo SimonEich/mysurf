@@ -1,8 +1,8 @@
 import { fetchWeatherApi } from 'openmeteo';
 	
 const params = {
-	"latitude": 54.544587,
-	"longitude": 10.227487,
+	"latitude": 15.8409,
+	"longitude": -95.97102,
 	"current": "wave_height"
 };
 const url = "https://marine-api.open-meteo.com/v1/marine";

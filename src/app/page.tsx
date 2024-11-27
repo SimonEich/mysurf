@@ -2,7 +2,10 @@ import { usersTable } from "@/db/schema";
 import { db } from "..";
 import { weatherData } from "./meteo";
 import Link from "next/link";
-import { dbWrite } from "..";
+import { FuncUser } from "./Components/user";
+
+
+
 
 export default async function Home() {
 
@@ -11,14 +14,15 @@ export default async function Home() {
   console.log(weatherData)
   return (
     <div>
-      <Link href="/dashboard" style={{ marginRight: '10px' }}>About</Link>
-      <p>{weather.current.waveHeight}</p>
-      {users.map((user)=>
-      <p key={user.id}>{user.name}</p>)}
-      <button type="submit" onClick={void dbWrite('a@a.e')}>save</button>
-    
-    </div>
-    
+    <Link href="/dashboard" style={{ marginRight: "10px" }}>
+      About
+    </Link>
+    <h1>{weather?.current?.waveHeight}</h1>
+    {users.map((user) => (
+    <h1 key={user.id}>{user.name}</h1>
+    ))}
+    <FuncUser/>
+  </div>    
   );
 }
 

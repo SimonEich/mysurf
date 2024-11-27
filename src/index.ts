@@ -2,7 +2,9 @@ import 'dotenv/config';
 import { drizzle } from 'drizzle-orm/node-postgres';
 //import { eq } from 'drizzle-orm';
 import { usersTable } from './db/schema';
+import { auth } from '@clerk/nextjs/server';
 
+const {} =auth()
 export const db = drizzle(process.env.DATABASE_URL!);
 console.log(db)
 
@@ -10,11 +12,13 @@ export async function dbWrite(a:string) {
   const user: typeof usersTable.$inferInsert = {
     name: 'eich1',
     age: 30,
-    email: a,
+    email: 'a@hisry.v',
   };
 
   await db.insert(usersTable).values(user);
-  console.log('New user created!')}
+  console.log('New user created!')
+  console.log(a)}
+
 //
 //  const users = await db.select().from(usersTable);
 //  console.log('Getting all users from the database: ', users)
