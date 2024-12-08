@@ -3,6 +3,8 @@ import { db } from "..";
 import { weatherData } from "./meteo";
 import Link from "next/link";
 import { FuncUser } from "./Components/user";
+import { SignInButton, SignedIn, SignedOut } from "@clerk/nextjs";
+import { Geocoding } from "./Components/geocoding";
 
 
 
@@ -14,6 +16,16 @@ export default async function Home() {
   console.log(weatherData)
   return (
     <div>
+    <SignedOut>
+      <div className="grid grid-cols-1"> 
+      <div className="flex place-content-center m-80">
+        <SignInButton />
+        <h1 className="ml-2">to find your the perfect Spot!</h1>
+      </div>
+      </div>
+    </SignedOut>
+
+    <SignedIn>
     <Link href="/dashboard" style={{ marginRight: "10px" }}>
       About
     </Link>
@@ -22,6 +34,9 @@ export default async function Home() {
     <h1 key={user.id}>{user.name}</h1>
     ))}
     <FuncUser/>
+    <Geocoding/>
+
+    </SignedIn>
   </div>    
   );
 }
