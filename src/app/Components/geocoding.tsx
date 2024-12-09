@@ -44,7 +44,7 @@ export function Geocoding() {
       const data = await response.json();
 
       if (data.results && data.results.length > 0) {
-        // Fetch elevation data for each result and filter places within 50 meters of sea level
+        // Fetch elevation data for each result and filter places within 200 meters of sea level
         const enrichedResults = await Promise.all(
           data.results.map(async (place: any) => {
             const elevation = await fetchElevation(place.latitude, place.longitude);
@@ -53,13 +53,13 @@ export function Geocoding() {
         );
 
         const filteredResults = enrichedResults
-          .filter((place) => place.elevation !== null && place.elevation <= 100)
+          .filter((place) => place.elevation !== null && place.elevation <= 200)
           .slice(0, 10); // Limit to 10 results
 
         if (filteredResults.length > 0) {
           setSuggestions(filteredResults);
         } else {
-          setError("No places found within 50 meters of sea level.");
+          setError("No places found within 200 meters of sea level.");
         }
       } else {
         setError("City not found. Please try another search.");
