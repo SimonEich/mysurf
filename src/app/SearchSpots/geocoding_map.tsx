@@ -14,7 +14,6 @@ L.Icon.Default.mergeOptions({
 function Geocoding_Map() {
   const [coordinates, setCoordinates] = useState<[number, number] | null>(null);
 
-
   // Component to handle map clicks and update coordinates
   const MapClickHandler = () => {
     useMapEvents({
@@ -32,7 +31,7 @@ function Geocoding_Map() {
       <p>Click on the map to select coordinates.</p>
       <div style={{ height: "500px", width: "100%", marginBottom: "20px" }}>
         <MapContainer
-          key={'undefined'}
+          key={undefined}
           center={[51.505, -0.09]} // Default center (London)
           zoom={13}
           style={{ height: "100%", width: "100%" }}

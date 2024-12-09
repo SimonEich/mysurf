@@ -8,7 +8,6 @@ export default function SearchSpot(){
         <p>
             SearchSpot
         </p>
-        <Geocoding_Map/>
     </div>
     );
 }
