@@ -12,7 +12,8 @@ export const Nav = () => {
             {isSignedIn && 
             <div className='flex align-middle'>
             <Link href="/" style={{ marginRight: '10px' }} className='flex w-1/5 bg-cyan-600 py-2 justify-center rounded-lg'>Home</Link>
-            <Link href="Favourites"style={{ marginRight: '10px' }} className='flex w-1/5 bg-cyan-600 py-2 justify-center rounded-lg'>Favourites</Link>
+            <Link href="MySpots"style={{ marginRight: '10px' }} className='flex w-1/5 bg-cyan-600 py-2 justify-center rounded-lg'>My Spots</Link>
+            <Link href="SearchSpots"style={{ marginRight: '10px' }} className='flex w-1/5 bg-cyan-600 py-2 justify-center rounded-lg'>Search Spots</Link>
             <div className='absolute right-8 flex'>
             <h1 className='m-2'>{user?.firstName}</h1>
 

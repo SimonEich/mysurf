@@ -5,7 +5,7 @@ import Link from "next/link";
 import { FuncUser } from "./Components/user";
 import { SignInButton, SignedIn, SignedOut } from "@clerk/nextjs";
 import { Geocoding } from "./Components/geocoding";
-import App1 from "./Components/geocoding2";
+import App1 from "./SearchSpots/geocoding_map";
 
 
 
@@ -36,8 +36,6 @@ export default async function Home() {
     ))}
     <FuncUser/>
     <Geocoding/>
-    <App1/>
-
     </SignedIn>
   </div>    
   );

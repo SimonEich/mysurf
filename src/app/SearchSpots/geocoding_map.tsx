@@ -11,8 +11,9 @@ L.Icon.Default.mergeOptions({
   shadowUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png",
 });
 
-function App1() {
+function Geocoding_Map() {
   const [coordinates, setCoordinates] = useState<[number, number] | null>(null);
+
 
   // Component to handle map clicks and update coordinates
   const MapClickHandler = () => {
@@ -31,6 +32,7 @@ function App1() {
       <p>Click on the map to select coordinates.</p>
       <div style={{ height: "500px", width: "100%", marginBottom: "20px" }}>
         <MapContainer
+          key={'undefined'}
           center={[51.505, -0.09]} // Default center (London)
           zoom={13}
           style={{ height: "100%", width: "100%" }}
@@ -56,4 +58,4 @@ function App1() {
   );
 }
 
-export default App1;
+export default Geocoding_Map;
