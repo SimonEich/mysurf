@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from "react";
 
-export function Geocoding() {
+export default function Geocoding() {
   const [city, setCity] = useState<string>(""); // City input
   const [suggestions, setSuggestions] = useState<
     { name: string; latitude: number; longitude: number; country: string; elevation: number }[]
@@ -69,6 +69,11 @@ export function Geocoding() {
     }
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
   return (
     <div style={{ fontFamily: "Arial, sans-serif", padding: "20px" }}>
       <h1>Low-Altitude City Finder</h1>
@@ -78,6 +83,10 @@ export function Geocoding() {
           value={city}
           className="text-black"
           onChange={(e) => setCity(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              handleSearch();
+              }}}
           placeholder="Enter city name"
           style={{ padding: "10px", width: "300px", fontSize: "16px" }}
         />

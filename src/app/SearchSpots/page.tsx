@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import Geocoding_Map from './geocoding_map';
+import Geocoding from './geocoding';
 
 
 export default function SearchSpot(){
@@ -8,6 +9,8 @@ export default function SearchSpot(){
         <p>
             SearchSpot
         </p>
+        <Geocoding/>
+
     </div>
     );
 }

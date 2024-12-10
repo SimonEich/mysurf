@@ -4,8 +4,6 @@ import { weatherData } from "./meteo";
 import Link from "next/link";
 import { FuncUser } from "./Components/user";
 import { SignInButton, SignedIn, SignedOut } from "@clerk/nextjs";
-import { Geocoding } from "./Components/geocoding";
-import App1 from "./SearchSpots/geocoding_map";
 
 
 
@@ -35,7 +33,6 @@ export default async function Home() {
     <h1 key={user.id}>{user.name}</h1>
     ))}
     <FuncUser/>
-    <Geocoding/>
     </SignedIn>
   </div>    
   );
