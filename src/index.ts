@@ -8,16 +8,16 @@ const {} =auth()
 export const db = drizzle(process.env.DATABASE_URL!);
 console.log(db)
 
-export async function dbWrite(a:string) {
+export async function dbWrite() {
   const user: typeof usersTable.$inferInsert = {
-    name: 'eich1',
+    name: 'mono',
     age: 30,
-    email: 'a@hisry.v',
+    email: 'mono@hisry.v',
   };
 
   await db.insert(usersTable).values(user);
   console.log('New user created!')
-  console.log(a)}
+  }
 
 //
 //  const users = await db.select().from(usersTable);
@@ -42,4 +42,4 @@ export async function dbWrite(a:string) {
 //  await db.delete(usersTable).where(eq(usersTable.email, user.email));
 //  console.log('User deleted!')
 //}
-//dbWrite();
+//dbWrite(a);

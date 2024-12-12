@@ -1,3 +1,4 @@
+'use client';
 import { fetchWeatherApi } from 'openmeteo';
 	
 const params = {
